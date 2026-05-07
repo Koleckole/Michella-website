@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Innovation Home Show | Calgary's Premier Home Trade Show</title>
+<title>Michella Home Show | Calgary's Premier Home Trade Show</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -894,7 +894,187 @@ footer {
 }
 .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
-/* ── RESPONSIVE ── */
+/* ── PAYMENT MODAL ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,23,20,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--white);
+  width: 100%;
+  max-width: 480px;
+  margin: 1rem;
+  position: relative;
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-header {
+  background: var(--navy);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+  padding: 0;
+}
+.modal-close:hover { color: #fff; }
+.modal-body { padding: 2rem; }
+.modal-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--off-white);
+  margin-bottom: 1.5rem;
+}
+.modal-product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.modal-product-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.modal-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.modal-qty label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.modal-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.modal-qty-btn {
+  background: var(--off-white);
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--navy);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-qty-btn:hover { background: var(--gold-light); }
+.modal-qty-num {
+  width: 40px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  border: none;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  background: #fff;
+  outline: none;
+}
+.modal-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.modal-total-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.modal-total-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.modal-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  padding: 0.75rem 1rem;
+  background: var(--gold-light);
+  border-left: 3px solid var(--gold);
+}
+.btn-pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1.1rem;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  text-align: center;
+}
+.btn-pay:hover { background: var(--navy-mid); }
+.btn-pay-icon { font-size: 1.1rem; }
+.modal-secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hero-inner { grid-template-columns: 1fr; }
@@ -920,13 +1100,14 @@ footer {
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar">
+  🎟️ <strong>Early Bird Tickets Now Available</strong> — Save up to 30% before August 1st!
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-      <span class="nav-logo-top">Innovation Home Show</span>
+      <span class="nav-logo-top">Michella Home Show</span>
       <span class="nav-logo-sub">Calgary's Premier Home Trade Show</span>
     </a>
     <ul class="nav-links">
@@ -949,7 +1130,7 @@ footer {
     <div class="hero-left">
       <div class="hero-date-badge">📅 September 25–27, 2026</div>
       <h1 class="hero-title">
-        Innovation<br/>
+        Michella<br/>
         <span>Home Show</span>
       </h1>
       <p class="hero-subtitle">
@@ -963,7 +1144,7 @@ footer {
     <div class="hero-right">
       <div class="hero-info-card">
         <div class="info-card-label">📍 Location</div>
-        <div class="info-card-value">TBD<small> Calgary, AB</small></div>
+        <div class="info-card-value">BMO Centre<small>Stampede Park, Calgary, AB</small></div>
       </div>
       <div class="hero-info-card">
         <div class="info-card-label">🕐 Show Hours</div>
@@ -1024,7 +1205,7 @@ footer {
       <div class="show-info-item">
         <div class="show-info-icon">📍</div>
         <div class="show-info-head">Location</div>
-        <div class="show-info-body">TBD<br/>Calgary, AB</div>
+        <div class="show-info-body">BMO Centre<br/>Stampede Park, Calgary, AB</div>
       </div>
       <div class="show-info-item">
         <div class="show-info-icon">🅿️</div>
@@ -1136,8 +1317,8 @@ footer {
       <p class="exhibit-cta-sub">Join 300+ businesses connecting directly with 30,000 engaged Calgary homeowners. Limited booths available — secure your spot before they're gone.</p>
     </div>
     <div class="exhibit-cta-actions">
-      <button class="btn-exhibit">Get a Booth Quote</button>
-      <button class="btn-exhibit-outline">View Booth Rates</button>
+      <button class="btn-exhibit" onclick="openPayment('booth')">Get a Booth Quote</button>
+      <button class="btn-exhibit-outline" onclick="openPayment('booth')">View Booth Rates</button>
     </div>
   </div>
 </section>
@@ -1243,7 +1424,7 @@ footer {
           <li>Sweepstakes entry included</li>
           <li>Kids under 12 free</li>
         </ul>
-        <button class="btn-ticket">Buy Tickets</button>
+        <button class="btn-ticket" onclick="openPayment('general')">Buy Tickets</button>
       </div>
       <div class="ticket-card featured">
         <div class="featured-badge">Best Value</div>
@@ -1260,7 +1441,7 @@ footer {
           <li>Kids under 12 free</li>
           <li>Priority entry lane</li>
         </ul>
-        <button class="btn-ticket">Buy Early Bird</button>
+        <button class="btn-ticket" onclick="openPayment('earlybird')">Buy Early Bird</button>
       </div>
       <div class="ticket-card">
         <div class="ticket-name">Group (10+)</div>
@@ -1276,7 +1457,7 @@ footer {
           <li>Kids under 12 free</li>
           <li>Group coordinator liaison</li>
         </ul>
-        <button class="btn-ticket">Book Group</button>
+        <button class="btn-ticket" onclick="openPayment('group')">Book Group</button>
       </div>
     </div>
   </div>
@@ -1286,12 +1467,19 @@ footer {
 <section class="newsletter-section">
   <div class="newsletter-inner">
     <div class="newsletter-text">
-      <div class="newsletter-title">Stay in the Loop</div>
-      <p class="newsletter-sub">Get show updates, exhibitor announcements, and exclusive presale offers.</p>
+      <div class="newsletter-title">Get Early Access</div>
+      <p class="newsletter-sub">Be first in line for presale tickets, exhibitor announcements, and exclusive show offers.</p>
     </div>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Enter your email address" />
-      <button>Subscribe</button>
+    <div class="newsletter-form" id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email address" />
+      <button onclick="handleSubscribe()">Get Early Access</button>
+    </div>
+    <div id="newsletter-success" style="display:none; align-items:center; gap:1rem;">
+      <div style="font-size:1.8rem;">🎉</div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">You're on the list!</div>
+        <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">We'll be in touch with early access details soon.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1301,7 +1489,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo-name">Innovation Home Show</div>
+        <div class="footer-logo-name">Michella Home Show</div>
         <p>Calgary's largest annual home improvement trade show, bringing homeowners and trusted local businesses together every fall since 2008.</p>
       </div>
       <div class="footer-col">
@@ -1329,9 +1517,9 @@ footer {
         <ul>
           <li><a href="#">hello@michellahomeshow.ca</a></li>
           <li><a href="#">(403) 555-0188</a></li>
-          <li><a href="#">TBD, Calgary</a></li>
-          <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-          <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+          <li><a href="#">BMO Centre, Calgary</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
         </ul>
       </div>
     </div>
@@ -1346,13 +1534,154 @@ footer {
   </div>
 </footer>
 
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="payment-modal" onclick="closeIfOverlay(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-title">Purchase Tickets</span>
+      <button class="modal-close" onclick="closePayment()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-product">
+        <span class="modal-product-name" id="modal-product-name">General Admission</span>
+        <span class="modal-product-price" id="modal-product-price">$14</span>
+      </div>
+      <div class="modal-qty" id="modal-qty-row">
+        <label>Quantity</label>
+        <div class="modal-qty-controls">
+          <button class="modal-qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="modal-qty-num" id="modal-qty" type="number" value="1" min="1" max="100" oninput="updateTotal()" />
+          <button class="modal-qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <div class="modal-total" id="modal-total-row">
+        <span class="modal-total-label">Total</span>
+        <span class="modal-total-price" id="modal-total">$14.00</span>
+      </div>
+      <div class="modal-note" id="modal-note">
+        💳 You'll be taken to a secure QuickBooks payment page to complete your purchase.
+      </div>
+      <a class="btn-pay" id="modal-pay-btn" href="#" target="_blank" rel="noopener">
+        <span class="btn-pay-icon">🔒</span>
+        Pay Securely with QuickBooks
+      </a>
+      <div class="modal-secure">🔐 Secure payment · Powered by QuickBooks Payments</div>
+    </div>
+  </div>
+</div>
+
 <script>
-  // Category filter buttons (visual only)
+  // ── QUICKBOOKS PAYMENT LINKS ──────────────────────────────────────────
+  // Replace these placeholder URLs with your real QuickBooks payment links
+  const QB_LINKS = {
+    general:   'https://YOUR-QUICKBOOKS-LINK/general-admission',   // $14 General Admission
+    earlybird: 'https://YOUR-QUICKBOOKS-LINK/early-bird',          // $10 Early Bird
+    group:     'https://YOUR-QUICKBOOKS-LINK/group-booking',       // $9 Group (10+)
+    booth:     'https://YOUR-QUICKBOOKS-LINK/booth-deposit',       // Booth Payment
+  };
+  // ─────────────────────────────────────────────────────────────────────
+
+  const PRODUCTS = {
+    general:   { name: 'General Admission',   price: 14, title: 'Buy Tickets',       qty: true  },
+    earlybird: { name: 'Early Bird Ticket',   price: 10, title: 'Early Bird Tickets', qty: true  },
+    group:     { name: 'Group Booking (10+)', price: 9,  title: 'Group Booking',      qty: true  },
+    booth:     { name: 'Exhibitor Booth',     price: null, title: 'Book a Booth',     qty: false },
+  };
+
+  let currentProduct = null;
+
+  function openPayment(type) {
+    const p = PRODUCTS[type];
+    currentProduct = { type, ...p };
+
+    document.getElementById('modal-title').textContent = p.title;
+    document.getElementById('modal-product-name').textContent = p.name;
+    document.getElementById('modal-product-price').textContent = p.price ? `$${p.price}` : 'Contact for pricing';
+    document.getElementById('modal-qty').value = 1;
+
+    const qtyRow = document.getElementById('modal-qty-row');
+    const totalRow = document.getElementById('modal-total-row');
+
+    if (p.qty && p.price) {
+      qtyRow.style.display = 'flex';
+      totalRow.style.display = 'flex';
+      updateTotal();
+    } else {
+      qtyRow.style.display = 'none';
+      totalRow.style.display = 'none';
+    }
+
+    if (type === 'booth') {
+      document.getElementById('modal-note').textContent = '📋 You\'ll be taken to our QuickBooks page to submit your booth deposit and reserve your spot.';
+      document.getElementById('modal-pay-btn').textContent = '🔒  Reserve My Booth';
+    } else {
+      document.getElementById('modal-note').textContent = '💳 You\'ll be taken to a secure QuickBooks payment page to complete your purchase.';
+      document.getElementById('modal-pay-btn').innerHTML = '<span class="btn-pay-icon">🔒</span> Pay Securely with QuickBooks';
+    }
+
+    document.getElementById('modal-pay-btn').href = QB_LINKS[type];
+    document.getElementById('payment-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePayment() {
+    document.getElementById('payment-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeIfOverlay(e) {
+    if (e.target === document.getElementById('payment-modal')) closePayment();
+  }
+
+  function changeQty(delta) {
+    const input = document.getElementById('modal-qty');
+    const newVal = Math.max(1, Math.min(100, parseInt(input.value || 1) + delta));
+    input.value = newVal;
+    updateTotal();
+  }
+
+  function updateTotal() {
+    if (!currentProduct || !currentProduct.price) return;
+    const qty = parseInt(document.getElementById('modal-qty').value) || 1;
+    const total = (qty * currentProduct.price).toFixed(2);
+    document.getElementById('modal-total').textContent = `$${total}`;
+  }
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePayment(); });
+
+  // Category filter buttons
   document.querySelectorAll('.ex-cat').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.ex-cat').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     });
+  });
+
+  // Newsletter subscription
+  function handleSubscribe() {
+    const emailInput = document.getElementById('newsletter-email');
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      emailInput.style.borderColor = '#c0392b';
+      emailInput.placeholder = 'Please enter your email';
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      emailInput.style.borderColor = '#c0392b';
+      emailInput.value = '';
+      emailInput.placeholder = 'Please enter a valid email';
+      return;
+    }
+    document.getElementById('newsletter-form').style.display = 'none';
+    const success = document.getElementById('newsletter-success');
+    success.style.display = 'flex';
+    console.log('Subscribed:', email);
+  }
+
+  document.getElementById('newsletter-email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubscribe();
   });
 </script>
 </body>
