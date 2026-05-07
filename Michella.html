@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Michella Home Show | Calgary's Premier Home Trade Show</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --red: #b89c6e;
+  --red-dark: #a0885a;
+  --red-light: #f7f4ef;
+  --navy: #1a1714;
+  --navy-mid: #2e2a26;
+  --gold: #b89c6e;
+  --gold-light: #e8dcc8;
+  --off-white: #f7f4ef;
+  --white: #fdfcfa;
+  --text: #1a1714;
+  --muted: #6b6460;
+  --border: rgba(184,156,110,0.25);
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announce-bar {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.announce-bar strong { color: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  background: var(--white);
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.nav-logo-top {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.nav-logo-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+.nav-links a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-cta {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.65rem 1.4rem;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-cta:hover { background: var(--red-dark); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+}
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+  background-size: 30px 30px;
+}
+.hero-stripe {
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 0;
+  width: 42%;
+  background: var(--red);
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0.92;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+.hero-left {}
+.hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.hero-title span { color: var(--gold); display: block; }
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 2rem;
+  max-width: 28rem;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-hero-primary {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1rem 2.2rem;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-hero-primary:hover { background: #d4901a; transform: translateY(-1px); }
+.btn-hero-secondary {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1rem 2.2rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-hero-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+}
+.hero-info-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 340px;
+}
+.info-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+.info-card-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+}
+.info-card-value small {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-top: 0.1rem;
+}
+.hero-stats {
+  display: flex;
+  gap: 0;
+  background: var(--white);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+.hero-stat {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--red);
+  line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* ── SECTION COMMON ── */
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 3px;
+  background: var(--red);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+/* ── SHOW INFO STRIP ── */
+.show-info-strip {
+  background: var(--off-white);
+  border-top: 3px solid var(--gold);
+  padding: 3rem 0;
+}
+.show-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.show-info-item {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.show-info-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--red-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+.show-info-head {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+.show-info-body {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── FEATURES ── */
+.features-section {
+  padding: 5rem 0;
+  background: var(--white);
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.feature-card {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+.feature-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+.feature-card-top {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.feature-card-top.red { background: var(--red); }
+.feature-card-top.navy { background: var(--navy); }
+.feature-card-top.gold { background: var(--gold); }
+.feature-card-top::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; right: -10px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.feature-card-body { padding: 1.5rem; }
+.feature-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+.feature-card-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.feature-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: gap 0.2s;
+}
+.feature-card-link:hover { gap: 0.7rem; }
+
+/* ── EXHIBITORS ── */
+.exhibitors-section {
+  padding: 5rem 0;
+  background: var(--off-white);
+}
+.exhibitor-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.5rem 0;
+}
+.ex-cat {
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ex-cat:hover, .ex-cat.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.exhibitors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.exhibitor-card {
+  background: var(--white);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.2s;
+}
+.exhibitor-card:hover { background: var(--red-light); }
+.exhibitor-cat-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--red);
+}
+.exhibitor-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+.exhibitor-booth {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ── EXHIBIT CTA ── */
+.exhibit-cta {
+  padding: 5rem 0;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.exhibit-cta::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 60px solid rgba(184,156,110,0.2);
+}
+.exhibit-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(184,156,110,0.15);
+}
+.exhibit-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.exhibit-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.exhibit-cta-title span { color: var(--gold); }
+.exhibit-cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 36rem;
+}
+.exhibit-cta-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn-exhibit {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1rem 2.5rem;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  text-align: center;
+}
+.btn-exhibit:hover { background: var(--red-dark); }
+.btn-exhibit-outline {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.9rem 2.5rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  white-space: nowrap;
+  text-align: center;
+}
+.btn-exhibit-outline:hover { border-color: #fff; }
+
+/* ── SCHEDULE ── */
+.schedule-section {
+  padding: 5rem 0;
+  background: var(--white);
+}
+.schedule-days {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+.schedule-day {
+  flex: 1;
+  border-right: 1px solid var(--border);
+}
+.schedule-day:last-child { border-right: none; }
+.schedule-day-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+}
+.schedule-day-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.schedule-day-date {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.1rem;
+}
+.schedule-events { padding: 0.5rem 0; }
+.schedule-event {
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.schedule-event:last-child { border-bottom: none; }
+.schedule-time {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  min-width: 60px;
+}
+.schedule-event-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+}
+.schedule-event-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* ── TICKETS ── */
+.tickets-section {
+  padding: 5rem 0;
+  background: var(--off-white);
+}
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.ticket-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ticket-card:hover {
+  border-color: var(--red);
+  box-shadow: 0 4px 24px rgba(184,156,110,0.15);
+}
+.ticket-card.featured {
+  border-color: var(--red);
+  border-width: 3px;
+}
+.featured-badge {
+  position: absolute;
+  top: -1px; right: 1.5rem;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+}
+.ticket-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.ticket-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+.ticket-price-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--red);
+  line-height: 1;
+}
+.ticket-price-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.ticket-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+.ticket-features li {
+  font-size: 0.88rem;
+  color: var(--text);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.ticket-features li::before {
+  content: '✓';
+  color: var(--red);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.btn-ticket {
+  display: block;
+  width: 100%;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.9rem;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s;
+}
+.btn-ticket:hover { background: var(--navy-mid); }
+.ticket-card.featured .btn-ticket {
+  background: var(--red);
+}
+.ticket-card.featured .btn-ticket:hover { background: var(--red-dark); }
+
+/* ── NEWSLETTER ── */
+.newsletter-section {
+  padding: 4rem 0;
+  background: var(--gold);
+}
+.newsletter-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.newsletter-text {}
+.newsletter-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.newsletter-sub {
+  font-size: 0.9rem;
+  color: rgba(26,23,20,0.65);
+  margin-top: 0.3rem;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  flex-shrink: 0;
+}
+.newsletter-form input {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.25rem;
+  width: 22rem;
+  border: 2px solid var(--navy);
+  border-right: none;
+  background: #fff;
+  color: var(--navy);
+  outline: none;
+}
+.newsletter-form input::placeholder { color: #999; }
+.newsletter-form button {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1.5rem;
+  background: var(--navy);
+  color: #fff;
+  border: 2px solid var(--navy);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.newsletter-form button:hover { background: var(--navy-mid); }
+
+/* ── FOOTER ── */
+footer {
+  background: #111;
+  padding: 3.5rem 0 1.5rem;
+  color: rgba(255,255,255,0.65);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand {}
+.footer-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-col ul a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col ul a:hover { color: #fff; }
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-stats { flex-wrap: wrap; }
+  .hero-stat { min-width: 50%; }
+  .show-info-grid { grid-template-columns: 1fr 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .exhibitors-grid { grid-template-columns: 1fr 1fr; }
+  .exhibit-cta-inner { grid-template-columns: 1fr; }
+  .schedule-days { flex-direction: column; }
+  .schedule-day { border-right: none; border-bottom: 1px solid var(--border); }
+  .tickets-grid { grid-template-columns: 1fr; }
+  .newsletter-inner { flex-direction: column; align-items: flex-start; }
+  .newsletter-form { flex-direction: column; width: 100%; }
+  .newsletter-form input { width: 100%; border-right: 2px solid var(--navy); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🎟️ <strong>Early Bird Tickets Now Available</strong> — Save up to 30% before August 1st!
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <span class="nav-logo-top">Calgary Home Solutions</span>
+      <span class="nav-logo-sub">Calgary's Premier Home Trade Show</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#info">Show Info</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#exhibitors">Exhibitors</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#tickets">Tickets</a></li>
+      <li><a href="#exhibit">Exhibit</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">Get Tickets</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-date-badge">📅 September 25–27, 2026</div>
+      <h1 class="hero-title">
+        Michella<br/>
+        <span>Home Show</span>
+      </h1>
+      <p class="hero-subtitle">
+        Calgary's largest home improvement trade show. Meet trusted experts, discover new products, and get your renovation projects off the ground — all under one roof.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">Get Tickets</button>
+        <button class="btn-hero-secondary" onclick="document.getElementById('info').scrollIntoView({behavior:'smooth'})">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-info-card">
+        <div class="info-card-label">📍 Location</div>
+        <div class="info-card-value">TBD<small> Calgary, AB</small></div>
+      </div>
+      <div class="hero-info-card">
+        <div class="info-card-label">🕐 Show Hours</div>
+        <div class="info-card-value">Thu–Fri: 12pm – 9pm<small>Saturday: 10am – 6pm</small></div>
+      </div>
+      <div class="hero-info-card">
+        <div class="info-card-label">🎟️ Tickets</div>
+        <div class="info-card-value">From $14<small>Kids under 12 always free</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div style="background:#fff; border-bottom: 1px solid var(--border);">
+  <div class="hero-stats" style="max-width:1200px; margin:0 auto;">
+    <div class="hero-stat">
+      <span class="hero-stat-num">300+</span>
+      <span class="hero-stat-label">Exhibitors</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">30,000</span>
+      <span class="hero-stat-label">Annual Visitors</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">3</span>
+      <span class="hero-stat-label">Days of Shows</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">15+</span>
+      <span class="hero-stat-label">Live Stage Events</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">Free</span>
+      <span class="hero-stat-label">Parking On-Site</span>
+    </div>
+  </div>
+</div>
+
+<!-- SHOW INFO -->
+<section class="show-info-strip" id="info">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Show Info</div>
+    <div class="section-title">Everything You Need to Know</div>
+  </div>
+  <div style="max-width:1200px; margin:2rem auto 0; padding:0 2rem;">
+    <div class="show-info-grid">
+      <div class="show-info-item">
+        <div class="show-info-icon">📅</div>
+        <div class="show-info-head">Dates</div>
+        <div class="show-info-body">September 25–27, 2026<br/>Thursday through Saturday</div>
+      </div>
+      <div class="show-info-item">
+        <div class="show-info-icon">🕐</div>
+        <div class="show-info-head">Hours</div>
+        <div class="show-info-body">Thu & Fri: Noon – 9:00 PM<br/>Saturday: 10:00 AM – 6:00 PM</div>
+      </div>
+      <div class="show-info-item">
+        <div class="show-info-icon">📍</div>
+        <div class="show-info-head">Location</div>
+        <div class="show-info-body">TBD<br/>Calgary, AB</div>
+      </div>
+      <div class="show-info-item">
+        <div class="show-info-icon">🅿️</div>
+        <div class="show-info-head">Parking</div>
+        <div class="show-info-body">Free on-site parking<br/>for all show attendees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Show Features</div>
+    <div class="section-title">What's at the Show</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-top red">🎤</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Main Stage Presentations</div>
+          <p class="feature-card-desc">Catch live talks from home improvement experts, designers, and celebrity guests covering the latest trends in renovation and interior design.</p>
+          <a class="feature-card-link" href="#schedule">View Schedule →</a>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-top navy">🏠</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Design Inspiration Rooms</div>
+          <p class="feature-card-desc">Explore fully furnished, professionally styled room vignettes showcasing the latest in home décor, lighting, and renovation trends.</p>
+          <a class="feature-card-link" href="#features">Explore Rooms →</a>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-top gold">🛠️</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Live Demo Workshops</div>
+          <p class="feature-card-desc">Get hands-on with expert-led DIY workshops, product demonstrations, and interactive sessions you can take home with you.</p>
+          <a class="feature-card-link" href="#schedule">See Workshops →</a>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-top navy">🎁</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Show Sweepstakes</div>
+          <p class="feature-card-desc">Enter to win incredible prizes including full home makeovers, appliances, and thousands of dollars in home improvement products.</p>
+          <a class="feature-card-link" href="#features">Enter to Win →</a>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-top red">💬</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Meet the Experts</div>
+          <p class="feature-card-desc">Connect face-to-face with trusted local contractors, designers, and suppliers — get real quotes and professional advice in person.</p>
+          <a class="feature-card-link" href="#exhibitors">Meet Exhibitors →</a>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-top gold">💰</div>
+        <div class="feature-card-body">
+          <div class="feature-card-title">Show-Only Deals</div>
+          <p class="feature-card-desc">Hundreds of exclusive show specials and deals available only at the event — shop and compare from hundreds of vendors in one day.</p>
+          <a class="feature-card-link" href="#exhibitors">See Specials →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXHIBITORS -->
+<section class="exhibitors-section" id="exhibitors">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Exhibitors</div>
+    <div class="section-title">Meet Our Exhibitors</div>
+    <div class="exhibitor-categories">
+      <button class="ex-cat active">All</button>
+      <button class="ex-cat">Renovation</button>
+      <button class="ex-cat">Kitchen & Bath</button>
+      <button class="ex-cat">Flooring</button>
+      <button class="ex-cat">Windows & Doors</button>
+      <button class="ex-cat">Landscaping</button>
+      <button class="ex-cat">Smart Home</button>
+      <button class="ex-cat">Interior Design</button>
+    </div>
+    <div class="exhibitors-grid">
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Apex Build Co.</div><div class="exhibitor-booth">Booth #A104</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Summit Kitchens</div><div class="exhibitor-booth">Booth #B211</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Prairie Floors</div><div class="exhibitor-booth">Booth #C318</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">HomeTech Pro</div><div class="exhibitor-booth">Booth #D102</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Windows & Doors</div><div class="exhibitor-name">Clear View Windows</div><div class="exhibitor-booth">Booth #A207</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">Studio Lumen</div><div class="exhibitor-booth">Booth #E115</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Landscaping</div><div class="exhibitor-name">Green Thumb Co.</div><div class="exhibitor-booth">Booth #F220</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Artisan Tile & Stone</div><div class="exhibitor-booth">Booth #B308</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Rocky Mountain Reno</div><div class="exhibitor-booth">Booth #A310</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Nordic Hardwood</div><div class="exhibitor-booth">Booth #C201</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">Bright Living</div><div class="exhibitor-booth">Booth #D218</div></div>
+      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">The Curated Home</div><div class="exhibitor-booth">Booth #E222</div></div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <button style="font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.9rem 2rem;background:var(--navy);color:#fff;border:none;cursor:pointer;">View Full Exhibitor List</button>
+    </div>
+  </div>
+</section>
+
+<!-- EXHIBIT CTA -->
+<section class="exhibit-cta" id="exhibit">
+  <div class="exhibit-cta-inner">
+    <div>
+      <div class="exhibit-cta-title">Looking to <span>Exhibit?</span></div>
+      <p class="exhibit-cta-sub">Join 300+ businesses connecting directly with 30,000 engaged Calgary homeowners. Limited booths available — secure your spot before they're gone.</p>
+    </div>
+    <div class="exhibit-cta-actions">
+      <button class="btn-exhibit">Get a Booth Quote</button>
+      <button class="btn-exhibit-outline">View Booth Rates</button>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Main Stage</div>
+    <div class="section-title">Show Schedule</div>
+    <div class="schedule-days">
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Thursday</div>
+          <div class="schedule-day-date">September 25 · Noon – 9 PM</div>
+        </div>
+        <div class="schedule-events">
+          <div class="schedule-event">
+            <div class="schedule-time">12:30 PM</div>
+            <div><div class="schedule-event-name">Opening Keynote</div><div class="schedule-event-desc">Home trends shaping Calgary in 2026</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">2:00 PM</div>
+            <div><div class="schedule-event-name">Kitchen Renovation Workshop</div><div class="schedule-event-desc">Budget-friendly kitchen transformations</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">4:30 PM</div>
+            <div><div class="schedule-event-name">Smart Home Demo</div><div class="schedule-event-desc">Automation & energy efficiency</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">7:00 PM</div>
+            <div><div class="schedule-event-name">Design Q&A Panel</div><div class="schedule-event-desc">Ask the experts live on stage</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Friday</div>
+          <div class="schedule-day-date">September 26 · Noon – 9 PM</div>
+        </div>
+        <div class="schedule-events">
+          <div class="schedule-event">
+            <div class="schedule-time">1:00 PM</div>
+            <div><div class="schedule-event-name">Interior Design Masterclass</div><div class="schedule-event-desc">Colour, texture & space planning</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">3:00 PM</div>
+            <div><div class="schedule-event-name">Flooring Trends 2026</div><div class="schedule-event-desc">What's in, what's out, what to choose</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">5:30 PM</div>
+            <div><div class="schedule-event-name">Outdoor Living Stage</div><div class="schedule-event-desc">Decks, patios & landscaping for Alberta</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">7:30 PM</div>
+            <div><div class="schedule-event-name">Sweepstakes Draw</div><div class="schedule-event-desc">Home makeover prize announcement</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Saturday</div>
+          <div class="schedule-day-date">September 27 · 10 AM – 6 PM</div>
+        </div>
+        <div class="schedule-events">
+          <div class="schedule-event">
+            <div class="schedule-time">10:30 AM</div>
+            <div><div class="schedule-event-name">Family DIY Workshop</div><div class="schedule-event-desc">Hands-on projects for all ages</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">12:00 PM</div>
+            <div><div class="schedule-event-name">Bathroom Renovation Tips</div><div class="schedule-event-desc">From dated to stunning on any budget</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">2:30 PM</div>
+            <div><div class="schedule-event-name">Energy Efficiency Talk</div><div class="schedule-event-desc">Grants, upgrades & savings for AB homes</div></div>
+          </div>
+          <div class="schedule-event">
+            <div class="schedule-time">4:30 PM</div>
+            <div><div class="schedule-event-name">Closing Giveaways</div><div class="schedule-event-desc">Final prize draws & show wrap-up</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="tickets-section" id="tickets">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Tickets</div>
+    <div class="section-title">Get Your Tickets</div>
+    <div class="tickets-grid">
+      <div class="ticket-card">
+        <div class="ticket-name">General Admission</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$14</span>
+          <span class="ticket-price-label">per adult</span>
+        </div>
+        <ul class="ticket-features">
+          <li>Full 3-day show access</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+          <li>Kids under 12 free</li>
+        </ul>
+        <button class="btn-ticket">Buy Tickets</button>
+      </div>
+      <div class="ticket-card featured">
+        <div class="featured-badge">Best Value</div>
+        <div class="ticket-name">Early Bird</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$10</span>
+          <span class="ticket-price-label">per adult · before Aug 1</span>
+        </div>
+        <ul class="ticket-features">
+          <li>Full 3-day show access</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+          <li>Kids under 12 free</li>
+          <li>Priority entry lane</li>
+        </ul>
+        <button class="btn-ticket">Buy Early Bird</button>
+      </div>
+      <div class="ticket-card">
+        <div class="ticket-name">Group (10+)</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$9</span>
+          <span class="ticket-price-label">per adult</span>
+        </div>
+        <ul class="ticket-features">
+          <li>Full 3-day show access</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+          <li>Kids under 12 free</li>
+          <li>Group coordinator liaison</li>
+        </ul>
+        <button class="btn-ticket">Book Group</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <div class="newsletter-title">Stay in the Loop</div>
+      <p class="newsletter-sub">Get show updates, exhibitor announcements, and exclusive presale offers.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" />
+      <button>Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Michella Home Show</div>
+        <p>Calgary's largest annual home improvement trade show, bringing homeowners and trusted local businesses together every fall since 2008.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Attendees</div>
+        <ul>
+          <li><a href="#info">Show Info</a></li>
+          <li><a href="#tickets">Buy Tickets</a></li>
+          <li><a href="#features">Show Features</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Exhibitors</div>
+        <ul>
+          <li><a href="#exhibitors">Exhibitor List</a></li>
+          <li><a href="#exhibit">Get a Booth Quote</a></li>
+          <li><a href="#exhibit">Booth Rates</a></li>
+          <li><a href="#">Sponsorship</a></li>
+          <li><a href="#">Exhibitor Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="#">hello@michellahomeshow.ca</a></li>
+          <li><a href="#">(403) 555-0188</a></li>
+          <li><a href="#">TBD, Calgary</a></li>
+          <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Michella Home Show. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Category filter buttons (visual only)
+  document.querySelectorAll('.ex-cat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.ex-cat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
