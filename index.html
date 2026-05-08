@@ -1462,22 +1462,32 @@ footer {
   </div>
 </section>
 
-<!-- NEWSLETTER -->
+<!-- NEWSLETTER → NOW QUESTION SECTION -->
 <section class="newsletter-section">
   <div class="newsletter-inner">
     <div class="newsletter-text">
-      <div class="newsletter-title">Get Early Access</div>
-      <p class="newsletter-sub">Be first in line for presale tickets, exhibitor announcements, and exclusive show offers.</p>
+      <div class="newsletter-title">Have a Question?</div>
+      <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we’ll get back to you.</p>
     </div>
-    <div class="newsletter-form" id="newsletter-form">
-      <input type="email" id="newsletter-email" placeholder="Enter your email address" />
-      <button onclick="handleSubscribe()">Get Early Access</button>
+
+    <!-- FORM -->
+    <div class="newsletter-form" id="question-form" style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;">
+      <input type="text" id="q-name" placeholder="Your Name" />
+      <input type="email" id="q-email" placeholder="Your Email" />
+      <textarea id="q-message" placeholder="Your Question..." style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"></textarea>
+      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">Submit Question</button>
     </div>
-    <div id="newsletter-success" style="display:none; align-items:center; gap:1rem;">
-      <div style="font-size:1.8rem;">🎉</div>
+
+    <!-- SUCCESS MESSAGE -->
+    <div id="question-success" style="display:none; align-items:center; gap:1rem;">
+      <div style="font-size:1.8rem;">✅</div>
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">You're on the list!</div>
-        <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">We'll be in touch with early access details soon.</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">
+          Question Sent!
+        </div>
+        <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">
+          We'll get back to you as soon as possible.
+        </div>
       </div>
     </div>
   </div>
