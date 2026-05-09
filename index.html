@@ -1160,9 +1160,10 @@ footer {
 <!-- STAT STRIP -->
 <div style="background:#fff; border-bottom: 1px solid var(--border);">
   <div class="hero-stats" style="max-width:1200px; margin:0 auto;">
-    <div class="hero-stat">
+    <div class="hero-stat" style="display:flex; align-items:center; justify-content:center;">
       <img src="company-logo.jpg" alt="Innovation Home Show Logo" style="width:90px; height:90px; object-fit:contain;" />
     </div>
+    <div class="hero-stat">
       <span class="hero-stat-num">300+</span>
       <span class="hero-stat-label">Exhibitors</span>
     </div>
@@ -1469,7 +1470,7 @@ footer {
   <div class="newsletter-inner">
     <div class="newsletter-text">
       <div class="newsletter-title">Have a Question?</div>
-      <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we’ll get back to you.</p>
+      <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we'll get back to you.</p>
     </div>
 
     <!-- FORM -->
@@ -1582,20 +1583,19 @@ footer {
 
 <script>
   // ── QUICKBOOKS PAYMENT LINKS ──────────────────────────────────────────
-  // Replace these placeholder URLs with your real QuickBooks payment links
   const QB_LINKS = {
-    general:   'https://YOUR-QUICKBOOKS-LINK/general-admission',   // $14 General Admission
-    earlybird: 'https://YOUR-QUICKBOOKS-LINK/early-bird',          // $10 Early Bird
-    group:     'https://YOUR-QUICKBOOKS-LINK/group-booking',       // $9 Group (10+)
-    booth:     'https://YOUR-QUICKBOOKS-LINK/booth-deposit',       // Booth Payment
+    general:   'https://YOUR-QUICKBOOKS-LINK/general-admission',
+    earlybird: 'https://YOUR-QUICKBOOKS-LINK/early-bird',
+    group:     'https://YOUR-QUICKBOOKS-LINK/group-booking',
+    booth:     'https://YOUR-QUICKBOOKS-LINK/booth-deposit',
   };
   // ─────────────────────────────────────────────────────────────────────
 
   const PRODUCTS = {
-    general:   { name: 'General Admission',   price: 14, title: 'Buy Tickets',       qty: true  },
-    earlybird: { name: 'Early Bird Ticket',   price: 10, title: 'Early Bird Tickets', qty: true  },
-    group:     { name: 'Group Booking (10+)', price: 9,  title: 'Group Booking',      qty: true  },
-    booth:     { name: 'Exhibitor Booth',     price: null, title: 'Book a Booth',     qty: false },
+    general:   { name: 'General Admission',   price: 14, title: 'Buy Tickets',        qty: true  },
+    earlybird: { name: 'Early Bird Ticket',   price: 10, title: 'Early Bird Tickets',  qty: true  },
+    group:     { name: 'Group Booking (10+)', price: 9,  title: 'Group Booking',       qty: true  },
+    booth:     { name: 'Exhibitor Booth',     price: null, title: 'Book a Booth',      qty: false },
   };
 
   let currentProduct = null;
@@ -1603,15 +1603,12 @@ footer {
   function openPayment(type) {
     const p = PRODUCTS[type];
     currentProduct = { type, ...p };
-
     document.getElementById('modal-title').textContent = p.title;
     document.getElementById('modal-product-name').textContent = p.name;
     document.getElementById('modal-product-price').textContent = p.price ? `$${p.price}` : 'Contact for pricing';
     document.getElementById('modal-qty').value = 1;
-
     const qtyRow = document.getElementById('modal-qty-row');
     const totalRow = document.getElementById('modal-total-row');
-
     if (p.qty && p.price) {
       qtyRow.style.display = 'flex';
       totalRow.style.display = 'flex';
@@ -1620,7 +1617,6 @@ footer {
       qtyRow.style.display = 'none';
       totalRow.style.display = 'none';
     }
-
     if (type === 'booth') {
       document.getElementById('modal-note').textContent = '📋 You\'ll be taken to our QuickBooks page to submit your booth deposit and reserve your spot.';
       document.getElementById('modal-pay-btn').textContent = '🔒  Reserve My Booth';
@@ -1628,7 +1624,6 @@ footer {
       document.getElementById('modal-note').textContent = '💳 You\'ll be taken to a secure QuickBooks payment page to complete your purchase.';
       document.getElementById('modal-pay-btn').innerHTML = '<span class="btn-pay-icon">🔒</span> Pay Securely with QuickBooks';
     }
-
     document.getElementById('modal-pay-btn').href = QB_LINKS[type];
     document.getElementById('payment-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1657,10 +1652,8 @@ footer {
     document.getElementById('modal-total').textContent = `$${total}`;
   }
 
-  // Close modal on Escape key
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closePayment(); });
 
-  // Category filter buttons
   document.querySelectorAll('.ex-cat').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.ex-cat').forEach(b => b.classList.remove('active'));
@@ -1668,31 +1661,17 @@ footer {
     });
   });
 
-  // Newsletter subscription
-  function handleSubscribe() {
-    const emailInput = document.getElementById('newsletter-email');
-    const email = emailInput.value.trim();
+  function handleQuestionSubmit() {
+    const name = document.getElementById('q-name').value.trim();
+    const email = document.getElementById('q-email').value.trim();
+    const message = document.getElementById('q-message').value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) {
-      emailInput.style.borderColor = '#c0392b';
-      emailInput.placeholder = 'Please enter your email';
-      return;
-    }
-    if (!emailRegex.test(email)) {
-      emailInput.style.borderColor = '#c0392b';
-      emailInput.value = '';
-      emailInput.placeholder = 'Please enter a valid email';
-      return;
-    }
-    document.getElementById('newsletter-form').style.display = 'none';
-    const success = document.getElementById('newsletter-success');
-    success.style.display = 'flex';
-    console.log('Subscribed:', email);
+    if (!name || !email || !message) return;
+    if (!emailRegex.test(email)) return;
+    document.getElementById('question-form').style.display = 'none';
+    document.getElementById('question-success').style.display = 'flex';
+    console.log('Question submitted:', { name, email, message });
   }
-
-  document.getElementById('newsletter-email').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') handleSubscribe();
-  });
 </script>
 </body>
 </html>
