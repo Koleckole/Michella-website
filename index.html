@@ -1466,33 +1466,118 @@ footer {
 <!-- NEWSLETTER → NOW QUESTION SECTION -->
 <section class="newsletter-section">
   <div class="newsletter-inner">
+
     <div class="newsletter-text">
       <div class="newsletter-title">Have a Question?</div>
-      <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we'll get back to you.</p>
+      <p class="newsletter-sub">
+        Ask us anything about the show, tickets, or exhibiting — we'll get back to you.
+      </p>
     </div>
 
     <!-- FORM -->
-    <div class="newsletter-form" id="question-form" style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;">
+    <div
+      class="newsletter-form"
+      id="question-form"
+      style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;"
+    >
       <input type="text" id="q-name" placeholder="Your Name" />
+
       <input type="email" id="q-email" placeholder="Your Email" />
-      <textarea id="q-message" placeholder="Your Question..." style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"></textarea>
-      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">Submit Question</button>
+
+      <textarea
+        id="q-message"
+        placeholder="Your Question..."
+        style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"
+      ></textarea>
+
+      <!-- 🛑 HONEYPOT (hidden spam trap) -->
+      <input type="text" id="website" style="display:none;" autocomplete="off">
+
+      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">
+        Submit Question
+      </button>
     </div>
 
     <!-- SUCCESS MESSAGE -->
     <div id="question-success" style="display:none; align-items:center; gap:1rem;">
       <div style="font-size:1.8rem;">✅</div>
+
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">
+        <div
+          style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);"
+        >
           Question Sent!
         </div>
+
         <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">
           We'll get back to you as soon as possible.
         </div>
       </div>
     </div>
+
   </div>
 </section>
+
+<!-- JAVASCRIPT -->
+<script>
+let lastSubmitTime = 0;
+
+async function handleQuestionSubmit() {
+  const now = Date.now();
+
+  // 🛑 rate limit (10 seconds)
+  if (now - lastSubmitTime < 10000) {
+    alert("Please wait a few seconds before submitting again.");
+    return;
+  }
+
+  const name = document.getElementById("q-name").value.trim();
+  const email = document.getElementById("q-email").value.trim();
+  const message = document.getElementById("q-message").value.trim();
+
+  // 🛑 honeypot field (bots fill this, humans don’t see it)
+  const honeypot = document.getElementById("website").value;
+
+  if (honeypot) {
+    console.log("Spam blocked (honeypot triggered)");
+    return;
+  }
+
+  // 🛑 validation
+  if (!name || !email || !message) {
+    alert("Please fill out all fields.");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email.");
+    return;
+  }
+
+  lastSubmitTime = now;
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbxsF50IcZSmw36dJzc-AtRwwBCpExBAhsB796nad7ScHPgwsbOcF24_0Ko98G-NfSGJ/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message
+      })
+    });
+
+    // show success state
+    document.getElementById("question-form").style.display = "none";
+    document.getElementById("question-success").style.display = "flex";
+
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
+  }
+}
+</script>
 
 <!-- FOOTER -->
 <footer>
