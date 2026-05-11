@@ -1530,32 +1530,23 @@ footer {
   </div>
 </section>
 
-<!-- NEWSLETTER → NOW QUESTION SECTION -->
+<!-- QUESTION SECTION -->
 <section class="newsletter-section">
-  <div class="newsletter-inner">
+  <div class="newsletter-inner" style="flex-direction:column; align-items:center; text-align:center; gap:2rem;">
     <div class="newsletter-text">
       <div class="newsletter-title">Have a Question?</div>
       <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we'll get back to you.</p>
     </div>
 
-    <!-- FORM -->
-    <div class="newsletter-form" id="question-form" style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;">
-      <input type="text" id="q-name" placeholder="Your Name" />
-      <input type="email" id="q-email" placeholder="Your Email" />
-      <textarea id="q-message" placeholder="Your Question..." style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"></textarea>
-      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">Submit Question</button>
+    <div id="question-form" style="width:100%; max-width:560px; display:flex; flex-direction:column; gap:0.75rem; text-align:left;">
+      <a href="https://forms.gle/xRu7Y4ZtugwRW5Dm9" target="_blank" rel="noopener" style="font-family:'Jost',sans-serif; font-size:0.85rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; padding:0.9rem 2rem; background:var(--navy); color:#fff; border:none; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; text-align:center;">Submit a Question</a>
     </div>
 
-    <!-- SUCCESS MESSAGE -->
-    <div id="question-success" style="display:none; align-items:center; gap:1rem;">
+    <div id="question-success" style="display:none; align-items:center; gap:1rem; justify-content:center;">
       <div style="font-size:1.8rem;">✅</div>
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">
-          Question Sent!
-        </div>
-        <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">
-          We'll get back to you as soon as possible.
-        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">Question Sent!</div>
+        <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">We'll get back to you as soon as possible.</div>
       </div>
     </div>
   </div>
@@ -1750,11 +1741,16 @@ footer {
     const email = document.getElementById('q-email').value.trim();
     const message = document.getElementById('q-message').value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!name || !email || !message) return;
-    if (!emailRegex.test(email)) return;
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
     document.getElementById('question-form').style.display = 'none';
     document.getElementById('question-success').style.display = 'flex';
-    console.log('Question submitted:', { name, email, message });
   }
 </script>
 </body>
