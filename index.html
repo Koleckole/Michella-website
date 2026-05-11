@@ -1306,6 +1306,8 @@ footer {
       <div class="exhibitor-card"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">The Curated Home</div><div class="exhibitor-booth">Booth #E222</div></div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
+      <button style="font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.9rem 2rem;background:var(--navy);color:#fff;border:none;cursor:pointer;">View Full Exhibitor List</button>
+    </div>
   </div>
 </section>
 
@@ -1411,171 +1413,146 @@ footer {
     <div class="section-eyebrow">Tickets</div>
     <div class="section-title">Get Your Tickets</div>
     <div class="tickets-grid">
+
       <div class="ticket-card">
-        <div class="ticket-name">General Admission</div>
+        <div class="ticket-name">Adult Regular</div>
         <div class="ticket-price">
           <span class="ticket-price-num">$14</span>
-          <span class="ticket-price-label">per adult</span>
+          <span class="ticket-price-label">ages 13+</span>
         </div>
         <ul class="ticket-features">
           <li>Full 3-day show access</li>
           <li>All stage presentations</li>
           <li>Exhibitor floor access</li>
           <li>Sweepstakes entry included</li>
-          <li>Kids under 12 free</li>
         </ul>
         <button class="btn-ticket" onclick="openPayment('general')">Buy Tickets</button>
       </div>
+
       <div class="ticket-card featured">
         <div class="featured-badge">Best Value</div>
-        <div class="ticket-name">Early Bird</div>
+        <div class="ticket-name">Adult Early Bird</div>
         <div class="ticket-price">
-          <span class="ticket-price-num">$10</span>
-          <span class="ticket-price-label">per adult · before Aug 1</span>
+          <span class="ticket-price-num">$12</span>
+          <span class="ticket-price-label">ages 13+ · online only</span>
         </div>
         <ul class="ticket-features">
           <li>Full 3-day show access</li>
           <li>All stage presentations</li>
           <li>Exhibitor floor access</li>
           <li>Sweepstakes entry included</li>
-          <li>Kids under 12 free</li>
           <li>Priority entry lane</li>
         </ul>
         <button class="btn-ticket" onclick="openPayment('earlybird')">Buy Early Bird</button>
       </div>
+
       <div class="ticket-card">
-        <div class="ticket-name">Group (10+)</div>
+        <div class="ticket-name">Half Day</div>
         <div class="ticket-price">
-          <span class="ticket-price-num">$9</span>
-          <span class="ticket-price-label">per adult</span>
+          <span class="ticket-price-num">$8</span>
+          <span class="ticket-price-label">ages 13+ · entry after 4pm</span>
+        </div>
+        <ul class="ticket-features">
+          <li>Entry from 4:00 PM onward</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+        </ul>
+        <button class="btn-ticket" onclick="openPayment('halfday')">Buy Half Day</button>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-name">4-Pack</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$48</span>
+          <span class="ticket-price-label">4 tickets · save $8</span>
+        </div>
+        <ul class="ticket-features">
+          <li>4 tickets for the price of 3</li>
+          <li>Full 3-day show access</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+        </ul>
+        <button class="btn-ticket" onclick="openPayment('fourpack')">Buy 4-Pack</button>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-name">Senior Regular</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$10</span>
+          <span class="ticket-price-label">ages 60+</span>
         </div>
         <ul class="ticket-features">
           <li>Full 3-day show access</li>
           <li>All stage presentations</li>
           <li>Exhibitor floor access</li>
           <li>Sweepstakes entry included</li>
-          <li>Kids under 12 free</li>
-          <li>Group coordinator liaison</li>
         </ul>
-        <button class="btn-ticket" onclick="openPayment('group')">Book Group</button>
+        <button class="btn-ticket" onclick="openPayment('senior')">Buy Tickets</button>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-name">Senior Early Bird</div>
+        <div class="ticket-price">
+          <span class="ticket-price-num">$9</span>
+          <span class="ticket-price-label">ages 60+ · online only</span>
+        </div>
+        <ul class="ticket-features">
+          <li>Full 3-day show access</li>
+          <li>All stage presentations</li>
+          <li>Exhibitor floor access</li>
+          <li>Sweepstakes entry included</li>
+          <li>Priority entry lane</li>
+        </ul>
+        <button class="btn-ticket" onclick="openPayment('seniorearlybird')">Buy Early Bird</button>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem; padding:1.25rem 1.5rem; border:1px solid var(--border); background:var(--gold-light); display:flex; align-items:center; gap:1rem;">
+      <span style="font-size:1.5rem;">🎉</span>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--navy); text-transform:uppercase; letter-spacing:0.04em;">Children 12 &amp; Under — Always Free</div>
+        <div style="font-size:0.85rem; color:var(--muted); margin-top:0.2rem;">No ticket required for children 12 and under when accompanied by a paying adult.</div>
       </div>
     </div>
+
+    <div style="margin-top:0.75rem; font-size:0.78rem; color:var(--muted);">* Early Bird pricing available online only while supplies last.</div>
+
   </div>
 </section>
 
 <!-- NEWSLETTER → NOW QUESTION SECTION -->
 <section class="newsletter-section">
   <div class="newsletter-inner">
-
     <div class="newsletter-text">
       <div class="newsletter-title">Have a Question?</div>
-      <p class="newsletter-sub">
-        Ask us anything about the show, tickets, or exhibiting — we'll get back to you.
-      </p>
+      <p class="newsletter-sub">Ask us anything about the show, tickets, or exhibiting — we'll get back to you.</p>
     </div>
 
     <!-- FORM -->
-    <div
-      class="newsletter-form"
-      id="question-form"
-      style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;"
-    >
+    <div class="newsletter-form" id="question-form" style="flex-direction: column; gap: 0.5rem; width: 100%; max-width: 420px;">
       <input type="text" id="q-name" placeholder="Your Name" />
-
       <input type="email" id="q-email" placeholder="Your Email" />
-
-      <textarea
-        id="q-message"
-        placeholder="Your Question..."
-        style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"
-      ></textarea>
-
-      <!-- 🛑 HONEYPOT (hidden spam trap) -->
-      <input type="text" id="website" style="display:none;" autocomplete="off">
-
-      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">
-        Submit Question
-      </button>
+      <textarea id="q-message" placeholder="Your Question..." style="font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.85rem 1.25rem;border:2px solid var(--navy);resize:none;height:100px;"></textarea>
+      <button onclick="handleQuestionSubmit()" style="margin-top:0.5rem;">Submit Question</button>
     </div>
 
     <!-- SUCCESS MESSAGE -->
     <div id="question-success" style="display:none; align-items:center; gap:1rem;">
       <div style="font-size:1.8rem;">✅</div>
-
       <div>
-        <div
-          style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);"
-        >
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy);">
           Question Sent!
         </div>
-
         <div style="font-size:0.88rem; color:rgba(26,23,20,0.65); margin-top:0.2rem;">
           We'll get back to you as soon as possible.
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
-<!-- JAVASCRIPT -->
-<script>
-let lastSubmitTime = 0;
-
-async function handleQuestionSubmit() {
-  const now = Date.now();
-
-  // 🛑 rate limit (10 seconds)
-  if (now - lastSubmitTime < 10000) {
-    alert("Please wait a few seconds before submitting again.");
-    return;
-  }
-
-  const name = document.getElementById("q-name").value.trim();
-  const email = document.getElementById("q-email").value.trim();
-  const message = document.getElementById("q-message").value.trim();
-
-  // 🛑 honeypot field (bots fill this, humans don’t see it)
-  const honeypot = document.getElementById("website").value;
-
-  if (honeypot) {
-    console.log("Spam blocked (honeypot triggered)");
-    return;
-  }
-
-  // 🛑 validation
-  if (!name || !email || !message) {
-    alert("Please fill out all fields.");
-    return;
-  }
-
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert("Please enter a valid email.");
-    return;
-  }
-
-  lastSubmitTime = now;
-
-  await fetch("https://script.google.com/macros/s/AKfycbxsF50IcZSmw36dJzc-AtRwwBCpExBAhsB796nad7ScHPgwsbOcF24_0Ko98G-NfSGJ/exec", {
-  method: "POST",
-  body: new URLSearchParams({
-    name: name,
-    email: email,
-    message: message
-  })
-});
-
-    // show success state
-    document.getElementById("question-form").style.display = "none";
-    document.getElementById("question-success").style.display = "flex";
-
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong. Please try again.");
-  }
-}
-</script>
 
 <!-- FOOTER -->
 <footer>
@@ -1665,18 +1642,24 @@ async function handleQuestionSubmit() {
 <script>
   // ── QUICKBOOKS PAYMENT LINKS ──────────────────────────────────────────
   const QB_LINKS = {
-    general:   'https://YOUR-QUICKBOOKS-LINK/general-admission',
-    earlybird: 'https://YOUR-QUICKBOOKS-LINK/early-bird',
-    group:     'https://YOUR-QUICKBOOKS-LINK/group-booking',
-    booth:     'https://YOUR-QUICKBOOKS-LINK/booth-deposit',
+    general:        'https://YOUR-QUICKBOOKS-LINK/general-admission',
+    earlybird:      'https://YOUR-QUICKBOOKS-LINK/early-bird',
+    halfday:        'https://YOUR-QUICKBOOKS-LINK/half-day',
+    fourpack:       'https://YOUR-QUICKBOOKS-LINK/four-pack',
+    senior:         'https://YOUR-QUICKBOOKS-LINK/senior',
+    seniorearlybird:'https://YOUR-QUICKBOOKS-LINK/senior-early-bird',
+    booth:          'https://YOUR-QUICKBOOKS-LINK/booth-deposit',
   };
   // ─────────────────────────────────────────────────────────────────────
 
   const PRODUCTS = {
-    general:   { name: 'General Admission',   price: 14, title: 'Buy Tickets',        qty: true  },
-    earlybird: { name: 'Early Bird Ticket',   price: 10, title: 'Early Bird Tickets',  qty: true  },
-    group:     { name: 'Group Booking (10+)', price: 9,  title: 'Group Booking',       qty: true  },
-    booth:     { name: 'Exhibitor Booth',     price: null, title: 'Book a Booth',      qty: false },
+    general:        { name: 'Adult Regular (13+)',        price: 14, title: 'Buy Tickets',            qty: true  },
+    earlybird:      { name: 'Adult Early Bird (13+)',     price: 12, title: 'Early Bird Tickets',     qty: true  },
+    halfday:        { name: 'Half Day Ticket (after 4pm)',price: 8,  title: 'Half Day Tickets',       qty: true  },
+    fourpack:       { name: '4-Pack Tickets',             price: 48, title: 'Buy 4-Pack',             qty: false },
+    senior:         { name: 'Senior Regular (60+)',       price: 10, title: 'Senior Tickets',         qty: true  },
+    seniorearlybird:{ name: 'Senior Early Bird (60+)',    price: 9,  title: 'Senior Early Bird',      qty: true  },
+    booth:          { name: 'Exhibitor Booth',            price: null, title: 'Book a Booth',         qty: false },
   };
 
   let currentProduct = null;
