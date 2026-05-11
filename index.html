@@ -489,9 +489,18 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  transition: background 0.2s;
+  transition: background 0.2s, opacity 0.25s, transform 0.25s;
 }
 .exhibitor-card:hover { background: var(--red-light); }
+.exhibitor-card.dimmed {
+  opacity: 0.2;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+.exhibitor-card.highlighted {
+  background: var(--gold-light);
+  border-left: 3px solid var(--gold);
+}
 .exhibitor-cat-tag {
   font-size: 0.68rem;
   font-weight: 500;
@@ -1282,31 +1291,30 @@ footer {
     <div class="section-eyebrow">Exhibitors</div>
     <div class="section-title">Meet Our Exhibitors</div>
     <div class="exhibitor-categories">
-      <button class="ex-cat active">All</button>
-      <button class="ex-cat">Renovation</button>
-      <button class="ex-cat">Kitchen & Bath</button>
-      <button class="ex-cat">Flooring</button>
-      <button class="ex-cat">Windows & Doors</button>
-      <button class="ex-cat">Landscaping</button>
-      <button class="ex-cat">Smart Home</button>
-      <button class="ex-cat">Interior Design</button>
+      <button class="ex-cat active" data-filter="all">All</button>
+      <button class="ex-cat" data-filter="renovation">Renovation</button>
+      <button class="ex-cat" data-filter="kitchen-bath">Kitchen & Bath</button>
+      <button class="ex-cat" data-filter="flooring">Flooring</button>
+      <button class="ex-cat" data-filter="windows-doors">Windows & Doors</button>
+      <button class="ex-cat" data-filter="landscaping">Landscaping</button>
+      <button class="ex-cat" data-filter="smart-home">Smart Home</button>
+      <button class="ex-cat" data-filter="interior-design">Interior Design</button>
     </div>
     <div class="exhibitors-grid">
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Comming soon</div><div class="exhibitor-booth">Booth #A104</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #B211</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #C318</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #D102</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Windows & Doors</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #A207</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #E115</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Landscaping</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #F220</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #B308</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #A310</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #C201</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #D218</div></div>
-      <div class="exhibitor-card"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">Coming soon</div><div class="exhibitor-booth">Booth #E222</div></div>
+      <div class="exhibitor-card" data-category="renovation"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="kitchen-bath"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="flooring"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="smart-home"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="windows-doors"><div class="exhibitor-cat-tag">Windows & Doors</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="interior-design"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="landscaping"><div class="exhibitor-cat-tag">Landscaping</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="kitchen-bath"><div class="exhibitor-cat-tag">Kitchen & Bath</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="renovation"><div class="exhibitor-cat-tag">Renovation</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="flooring"><div class="exhibitor-cat-tag">Flooring</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="smart-home"><div class="exhibitor-cat-tag">Smart Home</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
+      <div class="exhibitor-card" data-category="interior-design"><div class="exhibitor-cat-tag">Interior Design</div><div class="exhibitor-name">Coming Soon</div><div class="exhibitor-booth">Booth TBD</div></div>
     </div>
-    <div style="text-align:center; margin-top:2rem;">
-    </div>
+
   </div>
 </section>
 
@@ -1721,6 +1729,19 @@ footer {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.ex-cat').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.exhibitor-card').forEach(card => {
+        if (filter === 'all') {
+          card.classList.remove('dimmed', 'highlighted');
+        } else if (card.getAttribute('data-category') === filter) {
+          card.classList.remove('dimmed');
+          card.classList.add('highlighted');
+        } else {
+          card.classList.remove('highlighted');
+          card.classList.add('dimmed');
+        }
+      });
     });
   });
 
