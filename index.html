@@ -1744,13 +1744,7 @@ footer {
     if (e.target === document.getElementById('feature-modal')) closeFeatureModalBtn();
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeFeatureModalBtn();
-      closePayment();
-    }
-  });
-</script>
+  // ── QUICKBOOKS PAYMENT LINKS ──────────────────────────────────────────
   const QB_LINKS = {
     general:        'https://YOUR-QUICKBOOKS-LINK/general-admission',
     earlybird:      'https://YOUR-QUICKBOOKS-LINK/early-bird',
@@ -1763,13 +1757,13 @@ footer {
   // ─────────────────────────────────────────────────────────────────────
 
   const PRODUCTS = {
-    general:        { name: 'Adult Regular (13+)',         price: 14, title: 'Buy Tickets',           qty: true  },
-    earlybird:      { name: 'Adult Early Bird (13+)',      price: 12, title: 'Early Bird Tickets',    qty: true  },
-    halfday:        { name: 'Half Day Ticket (after 4pm)', price: 8,  title: 'Half Day Tickets',      qty: true  },
-    fourpack:       { name: '4-Pack Tickets',              price: 48, title: 'Buy 4-Pack',            qty: false },
-    senior:         { name: 'Senior Regular (60+)',        price: 10, title: 'Senior Tickets',        qty: true  },
-    seniorearlybird:{ name: 'Senior Early Bird (60+)',     price: 9,  title: 'Senior Early Bird',     qty: true  },
-    booth:          { name: 'Exhibitor Booth',             price: null, title: 'Book a Booth',        qty: false },
+    general:        { name: 'Adult Regular (13+)',         price: 14, title: 'Buy Tickets',        qty: true  },
+    earlybird:      { name: 'Adult Early Bird (13+)',      price: 12, title: 'Early Bird Tickets', qty: true  },
+    halfday:        { name: 'Half Day Ticket (after 4pm)', price: 8,  title: 'Half Day Tickets',   qty: true  },
+    fourpack:       { name: '4-Pack Tickets',              price: 48, title: 'Buy 4-Pack',         qty: false },
+    senior:         { name: 'Senior Regular (60+)',        price: 10, title: 'Senior Tickets',     qty: true  },
+    seniorearlybird:{ name: 'Senior Early Bird (60+)',     price: 9,  title: 'Senior Early Bird',  qty: true  },
+    booth:          { name: 'Exhibitor Booth',             price: null, title: 'Book a Booth',     qty: false },
   };
 
   let currentProduct = null;
@@ -1826,13 +1820,17 @@ footer {
     document.getElementById('modal-total').textContent = `$${total}`;
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePayment(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeFeatureModalBtn();
+      closePayment();
+    }
+  });
 
   document.querySelectorAll('.ex-cat').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.ex-cat').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       const filter = btn.getAttribute('data-filter');
       document.querySelectorAll('.exhibitor-card').forEach(card => {
         if (filter === 'all') {
@@ -1847,23 +1845,6 @@ footer {
       });
     });
   });
-
-  function handleQuestionSubmit() {
-    const name = document.getElementById('q-name').value.trim();
-    const email = document.getElementById('q-email').value.trim();
-    const message = document.getElementById('q-message').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!name || !email || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    document.getElementById('question-form').style.display = 'none';
-    document.getElementById('question-success').style.display = 'flex';
-  }
 </script>
 </body>
 </html>
