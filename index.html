@@ -1712,19 +1712,42 @@ footer {
     <div class="feature-modal-body">
       <span class="feature-modal-icon" id="feature-modal-icon"></span>
       <p class="feature-modal-desc" id="feature-modal-desc"></p>
-      <div class="feature-modal-coming-soon">✏️ More details coming soon — check back as we get closer to the show!</div>
     </div>
   </div>
 </div>
 
 <script>
   const FEATURE_DATA = {
-    booth:     { title: 'Booth Presentations', icon: '🎤', desc: 'Catch live talks from home improvement experts, designers, and guests covering the latest trends in renovation and interior design. More details coming soon.' },
-    design:    { title: 'Design Inspirations', icon: '🏠', desc: 'Explore fully furnished, professionally styled room vignettes showcasing the latest in home décor, lighting, and renovation trends. More details coming soon.' },
-    contract:  { title: 'Contract Demo',        icon: '🛠️', desc: 'Get hands-on with expert-led product demonstrations and interactive sessions. See the latest tools, materials, and techniques from top contractors. More details coming soon.' },
-    giveaways: { title: 'Show Giveaways',       icon: '🎁', desc: 'Enter to win incredible prizes including home makeovers, appliances, and thousands of dollars in home improvement products. More details coming soon.' },
-    experts:   { title: 'Meet the Experts',     icon: '💬', desc: 'Connect face-to-face with trusted local contractors, designers, and suppliers — get real quotes and professional advice in person. More details coming soon.' },
-    deals:     { title: 'Show-Only Deals',      icon: '💰', desc: 'Hundreds of exclusive show specials available only at the event — shop and compare from hundreds of vendors all in one day. More details coming soon.' },
+    booth: {
+      title: 'Booth Presentations',
+      icon: '🎤',
+      desc: 'Our Booth Presentations bring you face-to-face with Calgary\'s top home improvement professionals. Each booth hosts live talks covering the hottest trends in renovation, interior design, flooring, smart home technology, and more. Whether you\'re planning a full renovation or just looking for inspiration, our presenters deliver expert advice you can actually use. Topics include kitchen and bathroom remodels, energy-efficient upgrades, Alberta-specific landscaping, and the latest in home automation. Presentation times vary by booth — pick up a schedule at the entrance or check the show map. Seating is first come, first served, so arrive early for the most popular speakers.'
+    },
+    design: {
+      title: 'Design Inspirations',
+      icon: '🏠',
+      desc: 'Step inside our fully styled Design Inspiration rooms and experience what\'s possible for your home. Each vignette is professionally designed and furnished to showcase the latest trends in home décor, lighting, cabinetry, and renovation. Styles on display include modern farmhouse, contemporary minimalist, industrial chic, and classic Alberta charm. Every item you see — from the flooring underfoot to the light fixtures above — is sourced from our exhibitors, so you can find it all at the show. Take photos, ask our on-site designers for tips, and leave with a clear vision for your next project. Design Inspiration rooms are open all show hours and are completely free to explore.'
+    },
+    contract: {
+      title: 'Contract Demo',
+      icon: '🛠️',
+      desc: 'Watch the pros work in real time at our Contract Demo area. Skilled tradespeople demonstrate techniques in flooring installation, tile and stonework, cabinetry fitting, painting and finishing, and more. These live demos give you an inside look at what quality craftsmanship actually looks like — so you know what to expect when hiring a contractor for your own home. Each demo runs approximately 20–30 minutes with a Q&A period at the end. Demos run continuously throughout the show on a rotating schedule. Whether you\'re a homeowner wanting to understand the process or a DIY enthusiast looking to learn new skills, the Contract Demo area has something for you.'
+    },
+    giveaways: {
+      title: 'Show Giveaways',
+      icon: '🎁',
+      desc: 'Everyone loves a giveaway — and we deliver! The Innovation Home Show features exciting prize draws throughout the weekend, with everything from home improvement gift cards and appliances to full room makeovers. Entry is simple: pick up your giveaway ballot at the entrance when you arrive, fill it out, and drop it in any of the ballot boxes located throughout the show floor. Additional ballots can be earned by visiting participating exhibitor booths — look for the giveaway badge on their signage. Major draws take place Saturday and Sunday at 4:30 PM on the Main Stage. You do not need to be present to win. Good luck!'
+    },
+    experts: {
+      title: 'Meet the Experts',
+      icon: '💬',
+      desc: 'One of the most valuable parts of the Innovation Home Show is the chance to sit down with real professionals and get honest answers to your renovation questions — completely free. Our Expert Consultation area features licensed contractors, interior designers, landscape architects, energy efficiency advisors, and financial planners who specialize in home improvement projects. Bring photos of your space, your measurements, and your budget — our experts will help you figure out what\'s realistic, what to watch out for, and how to get the most out of your renovation dollar. Consultations are available on a walk-in basis throughout the show. Popular time slots fill up quickly, so visit early to secure your spot.'
+    },
+    deals: {
+      title: 'Show-Only Deals',
+      icon: '💰',
+      desc: 'The Innovation Home Show is the best place in Calgary to find exclusive deals on home improvement products and services — deals you simply won\'t find anywhere else. Hundreds of our exhibitors offer show-only pricing valid only during the three days of the event, including discounts on flooring, cabinetry, windows, doors, appliances, smart home systems, and professional services. Many exhibitors also offer free installation packages, extended warranties, and no-payment-until-next-year financing when you book at the show. Look for the bright gold "Show Deal" badge at participating booths, or pick up the Show Deals guide at the front entrance. Don\'t miss out — these prices are only available while the show is open.'
+    },
   };
 
   function openFeatureModal(key) {
