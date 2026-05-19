@@ -458,16 +458,39 @@ nav {
   position: relative;
   overflow: hidden;
 }
-.feature-card-top.red { background: var(--red); }
-.feature-card-top.navy { background: var(--navy); }
-.feature-card-top.gold { background: var(--gold); }
+.feature-card-top.red {
+  background: linear-gradient(135deg, #1a1714 0%, #2e2a26 60%, #b89c6e 100%);
+}
+.feature-card-top.navy {
+  background: linear-gradient(135deg, #2e2a26 0%, #1a1714 60%, #6b5a3e 100%);
+}
+.feature-card-top.gold {
+  background: linear-gradient(135deg, #b89c6e 0%, #a0885a 50%, #1a1714 100%);
+}
+.feature-card-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
 .feature-card-top::after {
   content: '';
   position: absolute;
   bottom: -10px; right: -10px;
   width: 80px; height: 80px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
+}
+.feature-card-top span {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
 .feature-card-body { padding: 1.5rem; }
 .feature-card-title {
@@ -1398,7 +1421,11 @@ footer {
     <div class="section-title">What's at the Show</div>
     <div class="features-grid">
       <div class="feature-card" onclick="openFeatureModal('booth')">
-        <div class="feature-card-top red">🎤</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-booth.jpg" alt="Booth Presentations" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">🎤</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Booth Presentations</div>
           <p class="feature-card-desc">Catch live talks from home improvement experts, designers, and celebrity guests covering the latest trends in renovation and interior design.</p>
@@ -1406,7 +1433,11 @@ footer {
         </div>
       </div>
       <div class="feature-card" onclick="openFeatureModal('design')">
-        <div class="feature-card-top navy">🏠</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-design.jpg" alt="Design Inspirations" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">🏠</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Design Inspirations</div>
           <p class="feature-card-desc">Explore fully furnished, professionally styled room vignettes showcasing the latest in home décor, lighting, and renovation trends.</p>
@@ -1414,7 +1445,11 @@ footer {
         </div>
       </div>
       <div class="feature-card" onclick="openFeatureModal('contract')">
-        <div class="feature-card-top gold">🛠️</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-demo.jpg" alt="Contract Demo" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">🛠️</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Contract Demo</div>
           <p class="feature-card-desc">Get hands-on with expert-led DIY workshops, product demonstrations, and interactive sessions you can take home with you.</p>
@@ -1422,7 +1457,11 @@ footer {
         </div>
       </div>
       <div class="feature-card" onclick="openFeatureModal('giveaways')">
-        <div class="feature-card-top navy">🎁</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-giveaway.jpg" alt="Show Giveaways" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">🎁</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Show Giveaways</div>
           <p class="feature-card-desc">Enter to win incredible prizes including full home makeovers, appliances, and thousands of dollars in home improvement products.</p>
@@ -1430,7 +1469,11 @@ footer {
         </div>
       </div>
       <div class="feature-card" onclick="openFeatureModal('experts')">
-        <div class="feature-card-top red">💬</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-experts.jpg" alt="Meet the Experts" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">💬</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Meet the Experts</div>
           <p class="feature-card-desc">Connect face-to-face with trusted local contractors, designers, and suppliers — get real quotes and professional advice in person.</p>
@@ -1438,7 +1481,11 @@ footer {
         </div>
       </div>
       <div class="feature-card" onclick="openFeatureModal('deals')">
-        <div class="feature-card-top gold">💰</div>
+        <div class="feature-card-top" style="background:none; padding:0;">
+          <img src="photo-deals.jpg" alt="Show-Only Deals" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div style="position:absolute; inset:0; background:rgba(26,23,20,0.5);"></div>
+          <span style="position:relative; z-index:1; font-size:3rem;">💰</span>
+        </div>
         <div class="feature-card-body">
           <div class="feature-card-title">Show-Only Deals</div>
           <p class="feature-card-desc">Hundreds of exclusive show specials and deals available only at the event — shop and compare from hundreds of vendors in one day.</p>
